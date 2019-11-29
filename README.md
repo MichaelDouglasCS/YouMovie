@@ -3,8 +3,8 @@
 ![Xcode 11.0+](https://img.shields.io/badge/Xcode-11.0%2B-blue.svg)
 ![Swift 5.0+](https://img.shields.io/badge/Swift-5.0%2B-orange.svg)
 ![iOS 11.0+](https://img.shields.io/badge/iOS-11.0%2B-blue.svg)
-[![Build Status](https://travis-ci.com/MichaelDouglasCS/desafio-mobile.svg?branch=master)](https://travis-ci.com/MichaelDouglasCS/desafio-mobile)
-[![codecov](https://codecov.io/gh/MichaelDouglasCS/desafio-mobile/branch/master/graph/badge.svg)](https://codecov.io/gh/MichaelDouglasCS/desafio-mobile)
+[![Build Status](https://travis-ci.com/MichaelDouglasCS/YouMovie.svg?branch=master)](https://travis-ci.com/MichaelDouglasCS/YouMovie)
+[![codecov](https://codecov.io/gh/MichaelDouglasCS/YouMovie/branch/master/graph/badge.svg)](https://codecov.io/gh/MichaelDouglasCS/YouMovie)
 
 # YouMovie
 This application is a Technical Test that has as goal implement a list of movies. The app should show 3 sections, such as Popular, Top Rated and Upcoming and be able to navigate to the details of each item.
@@ -60,7 +60,7 @@ $ pod install
 After that, you need to install the Homebrew, you can find the steps on this link below.
 
 ```
-https://brew.sh/index_pt-br
+https://brew.sh
 ```
 
 With Homebrew installed, you need to install the SwiftLint to assure your code linting, to do that just execute the command below.
