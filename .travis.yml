@@ -20,4 +20,4 @@ script:
 - xcodebuild -workspace YouMovie.xcworkspace -scheme "$SCHEME" -destination "$DESTINATION" clean test | xcpretty
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -t c5a8ad7e-5b56-4b54-a5db-f7f25e873077
+  - bash <(curl -s https://codecov.io/bash) -t c0d48c88-3d69-4b1d-812a-86305e6087f4
