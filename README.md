@@ -11,11 +11,11 @@ This application is a Technical Test that has as goal implement a list of movies
 
 ## Light Mode
 
-<img src="/Screenshots/home-light.png" width="210"> <img src="/Screenshots/home-scrolled-light.png" width="210"> <img src="/Screenshots/details-light.png" width="210"> <img src="/Screenshots/details-scrolled-light.png" width="210">
+<img src="/Screenshots/home-light.png" width="200"> <img src="/Screenshots/home-scrolled-light.png" width="200"> <img src="/Screenshots/details-light.png" width="200"> <img src="/Screenshots/details-scrolled-light.png" width="200">
 
 ## Dark Mode
 
-<img src="/Screenshots/home-dark.png" width="210"> <img src="/Screenshots/home-scrolled-dark.png" width="210"> <img src="/Screenshots/details-dark.png" width="210"> <img src="/Screenshots/details-scrolled-dark.png" width="210">
+<img src="/Screenshots/home-dark.png" width="200"> <img src="/Screenshots/home-scrolled-dark.png" width="200"> <img src="/Screenshots/details-dark.png" width="200"> <img src="/Screenshots/details-scrolled-dark.png" width="200">
 
 ## Getting Started
 
