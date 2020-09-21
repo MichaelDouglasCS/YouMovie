@@ -54,25 +54,33 @@ class MoviesView: BaseViewController, Feedbackable {
 
     private func setupSegmentedControl() {
 
-        let titles: [String] = [MessagesUtil.Movies.popularTitle,
-                                MessagesUtil.Movies.topRatedTitle,
-                                MessagesUtil.Movies.upcomingTitle]
+        let titles: [String] = [
+            MessagesUtil.Movies.popularTitle,
+            MessagesUtil.Movies.topRatedTitle,
+            MessagesUtil.Movies.upcomingTitle
+        ]
 
-        let segments = LabelSegment.segments(withTitles: titles,
-                                             normalFont: .systemFont(ofSize: 14.0, weight: .medium),
-                                             normalTextColor: UIColor.Style.darkGrayAdaptative,
-                                             selectedFont: .systemFont(ofSize: 14.0, weight: .bold),
-                                             selectedTextColor: UIColor.Style.whiteAdaptative)
+        let segments = LabelSegment.segments(
+            withTitles: titles,
+            normalFont: .systemFont(ofSize: 14.0, weight: .medium),
+            normalTextColor: UIColor.Style.darkGrayAdaptative,
+            selectedFont: .systemFont(ofSize: 14.0, weight: .bold),
+            selectedTextColor: UIColor.Style.whiteAdaptative
+        )
         
         let cornerRadius: CGFloat = self.currentOrientation.isPortrait ? 20.0 : 16.0
-        let options: [BetterSegmentedControlOption] = [.backgroundColor(.clear),
-                                                       .indicatorViewBackgroundColor(UIColor.Style.blackAdaptative),
-                                                       .cornerRadius(cornerRadius)]
+        let options: [BetterSegmentedControlOption] = [
+            .backgroundColor(.clear),
+            .indicatorViewBackgroundColor(UIColor.Style.blackAdaptative),
+            .cornerRadius(cornerRadius)
+        ]
 
-        let segmentedControl = BetterSegmentedControl(frame: CGRect(x: 0.0, y: 0.0, width: 300.0, height: 40.0),
-                                                      segments: segments,
-                                                      index: self.presenter.currentSection.rawValue,
-                                                      options: options)
+        let segmentedControl = BetterSegmentedControl(
+            frame: CGRect(x: 0.0, y: 0.0, width: 300.0, height: 40.0),
+            segments: segments,
+            index: self.presenter.currentSection.rawValue,
+            options: options
+        )
         segmentedControl.addTarget(self, action: #selector(self.didChangeMoviesSection), for: .valueChanged)
         self.navigationItem.titleView = segmentedControl
     }
@@ -116,10 +124,12 @@ class MoviesView: BaseViewController, Feedbackable {
     private func setupOrientationRecognizer() {
         
         let notificationCenter = NotificationCenter.default
-        self.didChangeOrientationObserver = notificationCenter.addObserver(forName: UIDevice.orientationDidChangeNotification,
-                                                                           object: nil,
-                                                                           queue: .main) { [weak self] _ in
-                                                                            self?.shouldLayoutCollectionCells()
+        self.didChangeOrientationObserver = notificationCenter.addObserver(
+            forName: UIDevice.orientationDidChangeNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            self?.shouldLayoutCollectionCells()
         }
     }
     
@@ -184,9 +194,11 @@ extension MoviesView: MoviesPresenterOutputProtocol {
     func didFailedMovies(localizedError: String) {
 
         let okAction = UIAlertAction(title: MessagesUtil.General.ok, style: .default)
-        self.showAlert(withTitle: MessagesUtil.General.oops,
-                       message: localizedError,
-                       actions: [okAction]) { [weak self] in
+        self.showAlert(
+            withTitle: MessagesUtil.General.oops,
+            message: localizedError,
+            actions: [okAction]
+        ) { [weak self] in
             self?.reloadMovies()
         }
     }
@@ -198,23 +210,32 @@ extension MoviesView: UICollectionViewDataSource {
 
     // MARK: - Internal Methods
 
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        return self.presenter.movies.count
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
+        presenter.movies.count
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.reuseIdentifier, for: indexPath) as? MovieCollectionViewCell else { return UICollectionViewCell() }
-        self.presenter.movies[indexPath.item].isNew = false
+        presenter.movies[indexPath.item].isNew = false
         cell.setupUI(with: self.presenter.movies[indexPath.item])
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LoadingCollectionReusableView.reuseIdentifier, for: indexPath) as? LoadingCollectionReusableView, kind == UICollectionView.elementKindSectionFooter else { return UICollectionReusableView() }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
+        guard let footerView = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: LoadingCollectionReusableView.reuseIdentifier,
+            for: indexPath) as? LoadingCollectionReusableView, kind == UICollectionView.elementKindSectionFooter else { return UICollectionReusableView() }
         return footerView
     }
 }
@@ -225,56 +246,61 @@ extension MoviesView: UICollectionViewDelegateFlowLayout {
 
     // MARK: - Private Properties
 
-    private var insetForSections: UIEdgeInsets {
-        return UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
-    }
-
-    private var margins: CGFloat {
-        return 15.0
-    }
+    private var insetForSections: UIEdgeInsets { .init(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0) }
+    private var margins: CGFloat { 15.0 }
 
     // MARK: - Internal Methods
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return self.insetForSections
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int
+    ) -> UIEdgeInsets {
+        self.insetForSections
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return self.margins
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int
+    ) -> CGFloat {
+        self.margins
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return self.margins
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumInteritemSpacingForSectionAt section: Int
+    ) -> CGFloat {
+        self.margins
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         
         if self.currentOrientation.isLandscape {
             let padding = self.insetForSections.left + self.insetForSections.right + self.margins
             let width = (self.view.bounds.size.height - padding) / 3
             let ratio: CGFloat = 1.7
             let height = width * ratio
-            return CGSize(width: width, height: height)
+            return .init(width: width, height: height)
         } else {
             let padding = self.insetForSections.left + self.insetForSections.right + self.margins
             let width = (self.view.bounds.size.width - padding) / 2
             let ratio: CGFloat = 1.7
             let height = width * ratio
-            return CGSize(width: width, height: height)
+            return .init(width: width, height: height)
         }
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        referenceSizeForFooterInSection section: Int) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        referenceSizeForFooterInSection section: Int
+    ) -> CGSize {
         let footerSize = CGSize(width: self.view.frame.size.width, height: 40.0)
         return !self.presenter.shouldFetchNextPageMovies ? .zero : footerSize
     }
@@ -286,19 +312,11 @@ extension MoviesView: UICollectionViewDelegate {
 
     // MARK: - Internal Methods
 
-    func collectionView(_ collectionView: UICollectionView,
-                        willDisplay cell: UICollectionViewCell,
-                        forItemAt indexPath: IndexPath) {
-
-        if !self.presenter.shouldSearchMovie {
-            cell.alpha = 0.0
-            cell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-
-            UIView.animate(withDuration: 0.4, delay: 0.0, options: .allowUserInteraction, animations: {
-                cell.alpha = 1.0
-                cell.transform = .identity
-            })
-        }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        willDisplay cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath
+    ) {
 
         let lastRowIndex = collectionView.numberOfItems(inSection: indexPath.section) - 1
 

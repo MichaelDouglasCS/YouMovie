@@ -44,7 +44,7 @@ class MovieDetailsInteractorSpec: QuickSpec {
             it("Should call fetchMoviesDidSucceed on output with Stub") {
                 
                 stub(condition: isMethodGET() && isHost("api.themoviedb.org")) { _ in
-                  return OHHTTPStubsResponse(
+                  return HTTPStubsResponse(
                     fileAtPath: OHPathForFile("MovieDetailsJSON.json", type(of: self))!,
                     statusCode: 200,
                     headers: ["Content-Type": "application/json"]
@@ -87,7 +87,7 @@ class MovieDetailsInteractorSpec: QuickSpec {
             it("Should call fetchMovieDetailsDidFailedCalled on output with Error") {
                 
                 stub(condition: isMethodGET() && isHost("api.themoviedb.org")) { _ in
-                  return OHHTTPStubsResponse(
+                  return HTTPStubsResponse(
                     jsonObject: [:],
                     statusCode: 502,
                     headers: ["Content-Type": "application/json"]
