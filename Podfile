@@ -14,10 +14,10 @@ end
 
 # Project Pods
 def project_pods
-    pod 'Alamofire', '~> 5.0.0-rc.1'
+    pod 'Alamofire', '~> 5.2.2'
     pod 'BetterSegmentedControl', '~> 1.2'
-    pod 'XCDYouTubeKit', '~> 2.8'
-    pod 'Kingfisher', '~> 5.0'
+    pod 'XCDYouTubeKit', '~> 2.14.1'
+    pod 'Kingfisher', '~> 5.15.3'
 end
 
 # Test Pods
