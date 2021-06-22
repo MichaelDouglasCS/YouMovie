@@ -33,7 +33,7 @@ DEPENDENCIES:
   - XCDYouTubeKit (~> 2.14.1)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - BetterSegmentedControl
     - Kingfisher
@@ -55,4 +55,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: da1fd341aff67b129f8c16a077c4ae507f23059c
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.10.1
