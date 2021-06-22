@@ -1,9 +1,9 @@
 language: swift
-osx_image: xcode11.2
+osx_image: xcode11.4
 xcode_workspace: YouMovie/YouMovie.xcworkspace
-xcode_sdk: iphonesimulator13.2
+xcode_sdk: iphonesimulator14.5
 env:
- - DESTINATION="platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.2.2" SCHEME="YouMovie"
+ - DESTINATION="platform=iOS Simulator,name=iPhone 12 Pro Max,OS=14.5" SCHEME="YouMovie"
 
 branches:
   only:
