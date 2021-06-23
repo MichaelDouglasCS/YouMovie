@@ -21,7 +21,7 @@ struct APIRoutes {
 
     // MARK: - Internal Properties
 
-    static let apiKey: String = "58f995b846d97757fb099d15cdf98a8d"
+    static let apiKey: String = "86edbafd587030693158039afb48e826"
     static let apiVersion: Int = 3
     static let apiBaseURL: String = "https://api.themoviedb.org/\(APIRoutes.apiVersion)"
 }
