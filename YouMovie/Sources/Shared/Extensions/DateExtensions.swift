@@ -14,7 +14,7 @@ extension Date {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .none
-        formatter.locale = .current
+        formatter.locale = .init(identifier: "pt_BR")
         return formatter.string(from: self)
     }
 }

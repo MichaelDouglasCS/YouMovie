@@ -14,25 +14,20 @@ extension APIRoutes {
 
         static func fetchMovies(from section: MoviesSectionType, atPage page: Int) -> String {
 
-            var sectionString: String = ""
             let baseURL: String = APIRoutes.apiBaseURL
             let apiKey: String = APIRoutes.apiKey
-            var language: String = ""
+            let language: String = "&language=pt-BR"
 
             switch section {
+            case .trending:
+                return "\(baseURL)/trending/movie/day?api_key=\(apiKey)\(language)&page=\(page)"
             case .popular:
-                sectionString = "popular"
+                return "\(baseURL)/movie/popular?api_key=\(apiKey)\(language)&page=\(page)"
             case .topRated:
-                sectionString = "top_rated"
+                return "\(baseURL)/movie/top_rated?api_key=\(apiKey)\(language)&page=\(page)"
             case .upcoming:
-                sectionString = "upcoming"
+                return "\(baseURL)/movie/upcoming?api_key=\(apiKey)\(language)&page=\(page)"
             }
-
-            if let currentLanguage = Locale.current.collatorIdentifier {
-                language = "&language=\(currentLanguage)"
-            }
-
-            return "\(baseURL)/movie/\(sectionString)?api_key=\(apiKey)\(language)&page=\(page)"
         }
 
         static func fetchImage(fromPath path: String, size: ImageSize) -> String {

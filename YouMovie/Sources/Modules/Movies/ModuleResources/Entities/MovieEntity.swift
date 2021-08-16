@@ -40,7 +40,7 @@ class MovieEntity: BaseEntity {
         if let releaseDateString = map.JSON["release_date"] as? String {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
-            formatter.locale = .current
+            formatter.locale = .init(identifier: "pt_BR")
             self.releaseDate = formatter.date(from: releaseDateString)
         }
 

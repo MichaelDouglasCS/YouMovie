@@ -11,6 +11,7 @@ import Foundation
 // MARK: - Definitions
 
 enum MoviesSectionType: Int {
+    case trending
     case popular
     case topRated
     case upcoming
@@ -51,6 +52,8 @@ class MoviesPresenter: NSObject {
 
     var title: String {
         switch self.currentSection {
+        case .trending:
+            return MessagesUtil.Movies.trendingTitle
         case .popular:
             return MessagesUtil.Movies.popularTitle
         case .topRated:
@@ -62,7 +65,7 @@ class MoviesPresenter: NSObject {
 
     // MARK: - Private Properties
 
-    private(set) var currentSection: MoviesSectionType = .popular {
+    private(set) var currentSection: MoviesSectionType = .trending {
         didSet {
             self.isLoading = true
             self.interactor.fetchMovies(from: self.currentSection, atPage: 1)

@@ -39,7 +39,7 @@ class MoviesView: BaseViewController, Feedbackable {
         self.setupSearchController()
         self.setupCollectionView()
         self.setupOrientationRecognizer()
-        self.fetchMovies(from: .popular)
+        self.fetchMovies(from: .trending)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +55,7 @@ class MoviesView: BaseViewController, Feedbackable {
     private func setupSegmentedControl() {
 
         let titles: [String] = [
+            MessagesUtil.Movies.trendingTitle,
             MessagesUtil.Movies.popularTitle,
             MessagesUtil.Movies.topRatedTitle,
             MessagesUtil.Movies.upcomingTitle

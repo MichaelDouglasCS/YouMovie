@@ -16,11 +16,7 @@ extension APIRoutes {
 
             let baseURL: String = APIRoutes.apiBaseURL
             let apiKey: String = APIRoutes.apiKey
-            var language: String = ""
-
-            if let currentLanguage = Locale.current.collatorIdentifier {
-                language = "&language=\(currentLanguage)"
-            }
+            let language: String = "&language=pt-BR"
 
             return "\(baseURL)/movie/\(movieID)?api_key=\(apiKey)\(language)&append_to_response=videos,credits,recommendations"
         }

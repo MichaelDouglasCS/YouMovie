@@ -11,9 +11,9 @@ import Foundation
 extension MessagesUtil {
 
     struct MovieDetails {
-        static let durationTitle: String = "Duration: "
-        static let budgetTitle: String = "Budget: "
-        static let revenueTitle: String = "Revenue: "
-        static let genresTitle: String = "Genres: "
+        static let durationTitle: String = "Duração: "
+        static let budgetTitle: String = "Orçamento: "
+        static let revenueTitle: String = "Receita: "
+        static let genresTitle: String = "Gêneros: "
     }
 }

@@ -12,6 +12,7 @@ extension MessagesUtil {
 
     struct Movies {
         static let title: String = "Movies"
+        static let trendingTitle: String = "Trending"
         static let popularTitle: String = "Popular"
         static let topRatedTitle: String = "Top Rated"
         static let upcomingTitle: String = "Upcoming"
