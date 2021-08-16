@@ -18,7 +18,7 @@ extension APIRoutes {
             let apiKey: String = APIRoutes.apiKey
             let language: String = "&language=pt-BR"
 
-            return "\(baseURL)/movie/\(movieID)?api_key=\(apiKey)\(language)&append_to_response=videos,credits,recommendations"
+            return "\(baseURL)/movie/\(movieID)?api_key=\(apiKey)\(language)&append_to_response=videos,credits,recommendations,release_dates"
         }
 
         static func fetchImage(fromPath path: String, size: ImageSize) -> String {

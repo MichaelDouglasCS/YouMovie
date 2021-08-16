@@ -72,9 +72,6 @@ class MovieDetailsView: BaseViewController {
         self.titleLabel.text = self.presenter.movie.title
         self.titleLabel.setLineSpacing(value: 3.0)
 
-        self.subtitleLabel.text = self.presenter.movie.releaseDate?.formattedString
-        self.subtitleLabel.setLineSpacing(value: 3.0)
-
         let overview = self.presenter.movie.overview ?? "-"
         self.overviewLabel.text = !overview.isEmpty ? overview : "-"
         self.overviewLabel.setLineSpacing(value: 3.0)
@@ -132,6 +129,8 @@ extension MovieDetailsView: MovieDetailsPresenterOutputProtocol {
     // MARK: - Internal Methods
 
     func updateUI() {
+        self.subtitleLabel.text = self.presenter.movie.releaseDate?.formattedString
+        self.subtitleLabel.setLineSpacing(value: 3.0)
         self.setupInformations()
         self.setupCastCrewView()
         self.setupRecommendationsView()

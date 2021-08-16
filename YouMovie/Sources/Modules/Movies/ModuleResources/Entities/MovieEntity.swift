@@ -37,11 +37,16 @@ class MovieEntity: BaseEntity {
         self.id <- map["id"]
         self.title <- map["title"]
 
-        if let releaseDateString = map.JSON["release_date"] as? String {
+        if let releaseDates = map.JSON["release_dates"] as? JSON,
+           let results = releaseDates["results"] as? [JSON],
+           let releaseDate = results.first(where: { $0.contains(where: { $0.key == "iso_3166_1" && $0.value as! String == "BR" }) }),
+           let rawReleaseDate = releaseDate["release_dates"] as? [JSON],
+           let releaseDateString = rawReleaseDate.first?["release_date"] as? String,
+           let formattedReleaseDateString = releaseDateString.split(separator: "T").first {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             formatter.locale = .init(identifier: "pt_BR")
-            self.releaseDate = formatter.date(from: releaseDateString)
+            self.releaseDate = formatter.date(from: String(formattedReleaseDateString))
         }
 
         self.voteAverage <- map["vote_average"]
