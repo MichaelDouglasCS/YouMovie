@@ -56,7 +56,7 @@ extension MovieDetailsWireframe: MovieDetailsWireframeProtocol {
         let playerView = AVPlayerViewController()
 
         self.view.present(playerView, animated: true) {
-
+            XCDYouTubeClient.setInnertubeApiKey("AIzaSyA9IOvYiOpGvl01X3K2yOJxhEsH96P6ptk")
             XCDYouTubeClient.default().getVideoWithIdentifier(videoKey) { (video, _) in
                 guard let streamURL = video?.streamURLs[XCDYouTubeVideoQuality.HD720.rawValue] else {
                     playerView.dismiss(animated: true)

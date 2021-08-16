@@ -30,7 +30,7 @@ DEPENDENCIES:
   - ObjectMapper (~> 3.4)
   - OHHTTPStubs/Swift
   - Quick
-  - XCDYouTubeKit (from `https://github.com/hinge-agency/XCDYouTubeKit.git`, branch `fix/issue-534-XCDYouTubeVideoErrorDomain-error-code-3`)
+  - XCDYouTubeKit (from `https://github.com/armendh/XCDYouTubeKit`, commit `651a6a51c695c5819eb51ba2f98d0b64094315b9`, branch `master`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -44,13 +44,14 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   XCDYouTubeKit:
-    :branch: fix/issue-534-XCDYouTubeVideoErrorDomain-error-code-3
-    :git: https://github.com/hinge-agency/XCDYouTubeKit.git
+    :branch: master
+    :commit: 651a6a51c695c5819eb51ba2f98d0b64094315b9
+    :git: https://github.com/armendh/XCDYouTubeKit
 
 CHECKOUT OPTIONS:
   XCDYouTubeKit:
-    :commit: 38170db3934e575ad4bfb782dedc544f304b482f
-    :git: https://github.com/hinge-agency/XCDYouTubeKit.git
+    :commit: 651a6a51c695c5819eb51ba2f98d0b64094315b9
+    :git: https://github.com/armendh/XCDYouTubeKit
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
@@ -62,6 +63,6 @@ SPEC CHECKSUMS:
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
   XCDYouTubeKit: b120aced3d8638ffb570c5450cddb5a1dac448c7
 
-PODFILE CHECKSUM: 0458b05365324068d213fd11226c6f3568503cd7
+PODFILE CHECKSUM: 6f4b5bb605caaf41cfeb0a4998ee8608b11f19f6
 
 COCOAPODS: 1.10.0

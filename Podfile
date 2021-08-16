@@ -16,7 +16,7 @@ end
 def project_pods
     pod 'Alamofire', '~> 5.2.2'
     pod 'BetterSegmentedControl', '~> 1.2'
-    pod 'XCDYouTubeKit', :git => 'https://github.com/hinge-agency/XCDYouTubeKit.git', :branch => 'fix/issue-534-XCDYouTubeVideoErrorDomain-error-code-3'
+    pod 'XCDYouTubeKit', :git => 'https://github.com/armendh/XCDYouTubeKit', :branch => 'master', :commit => '651a6a51c695c5819eb51ba2f98d0b64094315b9'
     pod 'Kingfisher', '~> 5.15.3'
 end
 

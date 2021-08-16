@@ -137,7 +137,6 @@ extension MovieDetailsView: MovieDetailsPresenterOutputProtocol {
         self.setupRecommendationsView()
         self.playVideoButton.alpha = self.presenter.hasVideo ? 1.0 : 0.0
         self.view.layoutIfNeeded()
-
     }
 
     // MARK: - Private Methods
