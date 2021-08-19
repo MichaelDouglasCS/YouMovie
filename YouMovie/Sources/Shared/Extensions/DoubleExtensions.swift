@@ -12,11 +12,17 @@ extension Double {
 
     /// Formats value to rounded string
     var roundedString: String? {
+        let divisor = pow(10.0, Double(0))
         let formatter = NumberFormatter()
-        let number = NSNumber(value: self)
+        let number = NSNumber(value: (self * divisor).rounded() / divisor)
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 16 // Maximum Digits in Double after dot
         return formatter.string(from: number)
+    }
+
+    func rounded(toPlaces places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
     }
 
     /// Formats value to en-US Currency using $ symbol
