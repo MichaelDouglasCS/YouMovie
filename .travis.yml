@@ -1,5 +1,5 @@
 language: swift
-osx_image: xcode11.4
+osx_image: xcode12.5
 xcode_workspace: YouMovie/YouMovie.xcworkspace
 xcode_sdk: iphonesimulator14.5
 env:
