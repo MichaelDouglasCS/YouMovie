@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import XCDYouTubeKit
-import AVKit
+import SafariServices
 
 class MovieDetailsWireframe: NSObject {
 
@@ -52,20 +51,31 @@ extension MovieDetailsWireframe: MovieDetailsWireframeProtocol {
     }
 
     func presentVideo(byKey videoKey: String) {
+        // Open YouTube video in Safari view controller
+        // Using mobile URL to encourage fullscreen video playback
+        guard let youtubeURL = URL(string: "https://m.youtube.com/watch?v=\(videoKey)") else {
+            print("❌ Invalid YouTube URL for video key: \(videoKey)")
+            return
+        }
 
-        let playerView = AVPlayerViewController()
+        let safariViewController = SFSafariViewController(url: youtubeURL)
+        safariViewController.preferredControlTintColor = UIColor.Style.blackAdaptative
+        safariViewController.preferredBarTintColor = UIColor.Style.whiteAdaptative
 
-        self.view.present(playerView, animated: true) {
-            XCDYouTubeClient.setInnertubeApiKey("AIzaSyA9IOvYiOpGvl01X3K2yOJxhEsH96P6ptk")
-            XCDYouTubeClient.default().getVideoWithIdentifier(videoKey) { (video, _) in
-                guard let streamURL = video?.streamURLs[XCDYouTubeVideoQuality.HD720.rawValue] else {
-                    playerView.dismiss(animated: true)
-                    return
-                }
-                playerView.player = AVPlayer(url: streamURL)
-                playerView.player?.play()
+        // Present as modal card (pageSheet) but video will play fullscreen
+        safariViewController.modalPresentationStyle = .pageSheet
+        safariViewController.modalTransitionStyle = .coverVertical
+
+        // Configure modal presentation
+        if #available(iOS 15.0, *) {
+            if let sheet = safariViewController.sheetPresentationController {
+                sheet.detents = [.large()]
+                sheet.prefersGrabberVisible = true
+                sheet.preferredCornerRadius = 20
             }
         }
+
+        self.view.present(safariViewController, animated: true)
     }
 
     func presentDetails(from recommendation: MovieEntity) {

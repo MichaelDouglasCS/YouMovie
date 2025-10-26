@@ -46,8 +46,7 @@
 		610A8378238DFE1F00DC1C02 /* MovieDetailsAPIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A8357238DFE1F00DC1C02 /* MovieDetailsAPIRoutes.swift */; };
 		610A837C238DFEBA00DC1C02 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A8379238DFEBA00DC1C02 /* NetworkProvider.swift */; };
 		610A837D238DFEBA00DC1C02 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A837A238DFEBA00DC1C02 /* RequestError.swift */; };
-		610A837E238DFEBA00DC1C02 /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A837B238DFEBA00DC1C02 /* APIRoutes.swift */; };
-		610A8394238DFEFA00DC1C02 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A8380238DFEFA00DC1C02 /* CircularImageView.swift */; };
+		610A837E238DFEBA00DC1C02 /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A837B238DFEBA00DC1C02 /* APIRoutes.swift */; };610A8394238DFEFA00DC1C02 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A8380238DFEFA00DC1C02 /* CircularImageView.swift */; };
 		610A8395238DFEFA00DC1C02 /* Feedbackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A8381238DFEFA00DC1C02 /* Feedbackable.swift */; };
 		610A8396238DFEFA00DC1C02 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A8382238DFEFA00DC1C02 /* CardView.swift */; };
 		610A8397238DFEFA00DC1C02 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A8383238DFEFA00DC1C02 /* CircularProgressView.swift */; };
@@ -138,8 +137,7 @@
 		610A8357238DFE1F00DC1C02 /* MovieDetailsAPIRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsAPIRoutes.swift; sourceTree = "<group>"; };
 		610A8379238DFEBA00DC1C02 /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		610A837A238DFEBA00DC1C02 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
-		610A837B238DFEBA00DC1C02 /* APIRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
-		610A8380238DFEFA00DC1C02 /* CircularImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
+		610A837B238DFEBA00DC1C02 /* APIRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };610A8380238DFEFA00DC1C02 /* CircularImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		610A8381238DFEFA00DC1C02 /* Feedbackable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedbackable.swift; sourceTree = "<group>"; };
 		610A8382238DFEFA00DC1C02 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		610A8383238DFEFA00DC1C02 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
@@ -363,8 +361,7 @@
 		610A837F238DFEFA00DC1C02 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				610A8380238DFEFA00DC1C02 /* CircularImageView.swift */,
-				610A8381238DFEFA00DC1C02 /* Feedbackable.swift */,
+				610A8380238DFEFA00DC1C02 /* CircularImageView.swift */,				610A8381238DFEFA00DC1C02 /* Feedbackable.swift */,
 				610A8382238DFEFA00DC1C02 /* CardView.swift */,
 				610A8383238DFEFA00DC1C02 /* CircularProgressView.swift */,
 				610A8384238DFEFA00DC1C02 /* LoadingCollectionReusableView.swift */,
@@ -814,8 +811,7 @@
 				610A8373238DFE1F00DC1C02 /* RecommendationsView.swift in Sources */,
 				610A831F238DF68A00DC1C02 /* BaseViewController.swift in Sources */,
 				610A837C238DFEBA00DC1C02 /* NetworkProvider.swift in Sources */,
-				610A8394238DFEFA00DC1C02 /* CircularImageView.swift in Sources */,
-				610A839C238DFEFA00DC1C02 /* UICollectionReusableViewExtensions.swift in Sources */,
+				610A8394238DFEFA00DC1C02 /* CircularImageView.swift in Sources */,				610A839C238DFEFA00DC1C02 /* UICollectionReusableViewExtensions.swift in Sources */,
 				610A83A2238DFEFA00DC1C02 /* UIAlertControllerExtensions.swift in Sources */,
 				610A8361238DFE1F00DC1C02 /* MoviesInteractor.swift in Sources */,
 				610A835E238DFE1F00DC1C02 /* MoviesPresenter.swift in Sources */,
@@ -904,7 +900,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -959,7 +955,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1018,7 +1014,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Q582659G6;
 				INFOPLIST_FILE = YouMovieTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1041,7 +1037,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Q582659G6;
 				INFOPLIST_FILE = YouMovieTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
